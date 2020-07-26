@@ -2,16 +2,33 @@ footer {
   text-align: center;
   background-color: $footer-color;
   margin-top: 60px;
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 94px;
+  }
 }
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
+
+  @media screen and (min-width: $desktop) {
+    @include centeredFlex();
+    justify-content: space-between;
+    margin: 0;
+    border-bottom: $footer-border;
+    border-top: $footer-border;
+  }
 }
 
 .tablet-footer {
   @media screen and (min-width: $tablet) {
     @include centeredFlex($align-items: baseline);
     justify-content: space-around;
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include centeredFlex(inline-flex, baseline);
+    justify-content: space-between;
   }
 }
 .footer-invitations {
