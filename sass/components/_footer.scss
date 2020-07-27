@@ -4,6 +4,7 @@ footer {
   margin-top: 60px;
 
   @media screen and (min-width: $desktop) {
+    text-align: start;
     margin-top: 94px;
   }
 }
@@ -14,7 +15,6 @@ footer {
   @media screen and (min-width: $desktop) {
     @include centeredFlex();
     justify-content: space-between;
-    margin: 0;
     border-bottom: $footer-border;
     border-top: $footer-border;
   }
@@ -27,21 +27,25 @@ footer {
   }
 
   @media screen and (min-width: $desktop) {
-    @include centeredFlex(inline-flex, baseline);
+    @include centeredFlex();
     justify-content: space-between;
   }
+
+  & div:last-child {
+    @media screen and (min-width: $desktop) {
+      margin-left: 69px;
+    }
+  }
 }
-.footer-invitations {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-transform: uppercase;
-  color: $white-color;
-}
+
 .footer-invitations-list {
   @include centeredFlex();
   padding: 0;
   margin-top: 20px;
+
+  @media screen and (min-width: $desktop) {
+    margin: 0;
+  }
 
   & li:not(:last-child) {
     margin-right: 10px;
@@ -55,6 +59,11 @@ footer {
   line-height: 1.71;
   font-style: normal;
   text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    margin: 0;
+    text-align: start;
+  }
 }
 .street-address {
   color: $white-color;
@@ -82,8 +91,22 @@ footer {
   @media screen and (min-width: $tablet) {
     margin-top: 0px;
   }
+  @media screen and (min-width: $desktop) {
+    @include centeredFlex(flex, flex-end);
+  }
 }
+.footer-invitations {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $white-color;
 
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 20px;
+    text-align: start;
+  }
+}
 .subscribe-button {
   @include centeredFlex();
   min-width: 200px;
@@ -103,6 +126,10 @@ footer {
   line-height: 1.87;
   color: $white-color;
   text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    margin: 0px;
+  }
 }
 .footer-subscribe-icon {
   width: 24px;
@@ -152,5 +179,10 @@ footer {
   @media screen and (min-width: $tablet) {
     margin: auto;
     margin-top: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 12px;
+    min-width: 358px;
   }
 }

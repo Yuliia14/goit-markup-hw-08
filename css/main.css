@@ -583,7 +583,6 @@ body {
             justify-content: center;
     padding-top: 94px;
     padding-bottom: 94px;
-    margin: 0;
     margin-bottom: 94px;
   }
 }
@@ -880,6 +879,7 @@ footer {
 
 @media screen and (min-width: 1200px) {
   footer {
+    text-align: start;
     margin-top: 94px;
   }
 }
@@ -903,7 +903,6 @@ footer {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -927,12 +926,12 @@ footer {
 
 @media screen and (min-width: 1200px) {
   .tablet-footer {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -942,12 +941,10 @@ footer {
   }
 }
 
-.footer-invitations {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-transform: uppercase;
-  color: #ffffff;
+@media screen and (min-width: 1200px) {
+  .tablet-footer div:last-child {
+    margin-left: 69px;
+  }
 }
 
 .footer-invitations-list {
@@ -964,6 +961,12 @@ footer {
   margin-top: 20px;
 }
 
+@media screen and (min-width: 1200px) {
+  .footer-invitations-list {
+    margin: 0;
+  }
+}
+
 .footer-invitations-list li:not(:last-child) {
   margin-right: 10px;
 }
@@ -975,6 +978,13 @@ footer {
   line-height: 1.71;
   font-style: normal;
   text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-address {
+    margin: 0;
+    text-align: start;
+  }
 }
 
 .street-address {
@@ -1008,6 +1018,35 @@ footer {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .footer-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.footer-invitations {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-invitations {
+    margin-bottom: 20px;
+    text-align: start;
+  }
+}
+
 .subscribe-button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1033,6 +1072,12 @@ footer {
   line-height: 1.87;
   color: #ffffff;
   text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe-button {
+    margin: 0px;
+  }
 }
 
 .footer-subscribe-icon {
@@ -1106,6 +1151,13 @@ footer {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .footer-input {
+    margin-right: 12px;
+    min-width: 358px;
+  }
+}
+
 .page-filter {
   padding: 6px 22px;
   border: transparent;
@@ -1130,6 +1182,13 @@ footer {
 .projects {
   margin-top: 60px;
   margin-bottom: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .projects {
+    margin-top: 93px;
+    margin-bottom: 94px;
+  }
 }
 
 .projects h1 {
@@ -1177,6 +1236,14 @@ footer {
   }
 }
 
+@media screen and (min-width: 768px) and (min-width: 1200px) {
+  .projects-list {
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
 .projects-list > li {
   margin-top: 15px;
 }
@@ -1216,6 +1283,12 @@ footer {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .project-examples {
+    margin-bottom: 50px;
+  }
+}
+
 .projects-examples-item {
   padding-bottom: 20px;
   width: 100%;
@@ -1231,8 +1304,20 @@ footer {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .projects-examples-item {
+    width: calc((100% - 3 * 30px) / 3);
+  }
+}
+
 .projects-examples-item:not(:last-child) {
   margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1200px) {
+  .projects-examples-item:not(:last-child) {
+    margin-bottom: 0px;
+  }
 }
 
 .projects-examples-title {
@@ -1241,8 +1326,8 @@ footer {
 
 @media screen and (min-width: 768px) {
   .projects-examples-title {
-    width: 306px;
-    height: 70px;
+    width: auto;
+    height: auto;
   }
 }
 
@@ -1343,8 +1428,14 @@ footer {
 @media screen and (min-width: 768px) {
   .project-examples-text {
     margin: 49px 24px;
-    width: 306px;
-    height: 196px;
+    width: auto;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .project-examples-text {
+    margin: 63px 24px;
   }
 }
 /*# sourceMappingURL=main.css.map */
