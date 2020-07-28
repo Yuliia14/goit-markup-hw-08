@@ -14,52 +14,42 @@
     <!--Шапка сайта-->
     <header class="page-header">
       <div class="container header">
-        <nav class="main-nav">
-          <a class="header-logo" href="./"
-            ><span class="logo-blue-part">Web </span>Studio</a
-          >
-          <div class="menu-container">
-            <ul class="list">
-            <li class="item">
-              <a class="header-link" href="./index.html">Студия</a>
-            </li>
-            <li class="item">
-              <a class="header-link current" href="./portfolio.html">Портфолио</a>
-            </li>
-            <li class="item"><a class="header-link" href="#">Контакты</a></li>
-          </ul>
-          </nav>
-          <address class="header-address">
-            <ul class="list header-address">
-              <li>
-                <a class="header-link address" href="mailto:info@devstudio.com"><svg class="header-icon mail">
-                    <use href="./images/symbol-defs.svg#envelope-icon"></use>
-                  </svg>info@devstudio.com</a>
-              </li>
-              <li>
-                <a class="header-link address" href="tel:+380961111111"><svg class="header-icon phone">
-                    <use href="./images/symbol-defs.svg#smartphone"></use>
-                  </svg>+38 096 111 11 11</a>
-              </li>
-            </ul>
-          </address>
+        <div class="logo-button">
+          <a class="header-logo" href="./"><span class="logo-blue-part">Web </span>Studio</a>
+          <button type="button" class="menu-button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+            <svg width="22" height="22" aria-label="Переключатель мобильного меню">
+              <use class="icon-menu" href="./images/symbol-defs.svg#menu_24px"></use>
+              <use class="icon-cross" href="./images/symbol-defs.svg#close_24px"></use>
+            </svg>
+          </button>
         </div>
-        <button 
-        type="button" 
-        class="menu-button" 
-        aria-expanded="false" 
-        aria-controls="menu-container" 
-        data-menu-button
-        >
-          <svg 
-            width="40"
-            height="40"
-            aria-label="Переключатель мобильного меню"
-            >
-            <use class="icon-menu" href="./images/symbol-defs.svg#menu_24px"></use>
-            <use class="icon-cross" href="./images/symbol-defs.svg#close_24px"></use>
-          </svg>
-        </button>
+        <div class="menu-container">
+          <nav class="main-nav">
+          <ul class="list">
+          <li class="item">
+            <a class="header-link" href="./index.html">Студия</a>
+          </li>
+          <li class="item">
+            <a class="header-link current" href="./portfolio.html">Портфолио</a>
+          </li>
+          <li class="item"><a class="header-link" href="#">Контакты</a></li>
+        </ul>
+        </nav>
+        <address class="header-address">
+          <ul class="list header-address">
+            <li>
+              <a class="header-link address" href="mailto:info@devstudio.com"><svg class="header-icon mail">
+                  <use href="./images/symbol-defs.svg#envelope-icon"></use>
+                </svg>info@devstudio.com</a>
+            </li>
+            <li>
+              <a class="header-link address" href="tel:+380961111111"><svg class="header-icon phone">
+                  <use href="./images/symbol-defs.svg#smartphone"></use>
+                </svg>+38 096 111 11 11</a>
+            </li>
+          </ul>
+        </address>
+      </div>
       </div>
     </header>
     <main>
