@@ -1,0 +1,102 @@
+.page-header {
+  /*position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 60px;*/
+
+  background-color: $white-color;
+
+  z-index: 9;
+}
+.main-nav {
+  padding-top: 15px;
+}
+.menu-container {
+  @include centeredFlex();
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.list .header-address:first-child {
+  margin-bottom: 15px;
+}
+.header-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: $title-color;
+  font-style: normal;
+
+  @include transition(color);
+
+  &:hover,
+  &:focus {
+    color: $blue-color;
+  }
+  &.current {
+    color: $blue-color;
+  }
+  &.current::after {
+    content: "";
+    display: block;
+    margin-top: 8px;
+
+    background-color: $blue-color;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+  }
+}
+.list .item:nth-child(n + 2) {
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+.list.header-address {
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+
+  & li + li {
+    margin-top: 15px;
+  }
+}
+.mail {
+  @include header-icons();
+}
+.phone {
+  @include header-icons(10px, 15px);
+}
+.header-icon {
+  fill: $text-color;
+
+  @include transition(fill);
+
+  .header-link:hover & {
+    fill: $blue-color;
+  }
+  .header-link:focus & {
+    fill: $blue-color;
+  }
+}
+.menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  & .icon-cross {
+    display: none;
+  }
+  &.is-open .icon-cross {
+    display: block;
+  }
+  &.is-open .icon-menu {
+    display: none;
+  }
+}

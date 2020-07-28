@@ -1,8 +1,6 @@
 .header-logo {
-  margin-right: 85px;
-
   @include logo();
-  font-size: 26px;
+  font-size: 24px;
   color: $logo-color;
 }
 .logo-blue-part {
