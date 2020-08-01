@@ -4,7 +4,8 @@ body {
   background-color: $white-color;
   color: $text-color;
 
-  margin: 0px;
+  padding-top: 60px;
+  margin: 0;
 
   @media screen and (min-width: $tablet) {
     padding-top: 80px;

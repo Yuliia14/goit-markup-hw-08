@@ -1,37 +1,71 @@
 .page-header {
   position: relative;
-  top: 0;
-  left: 0;
-
-  width: 100%;
   height: 60px;
+
+  z-index: 9;
+
+  @media screen and (min-width: $tablet) {
+    height: 80px;
+  }
+}
+.header {
+  @media screen and (min-width: $tablet) {
+    @include centeredFlex();
+    align-items: baseline;
+    flex-wrap: nowrap;
+  }
+}
+.menu-container {
+  text-align: center;
 
   background-color: $white-color;
 
-  z-index: 9;
-}
-.header {
-  padding-top: 15px;
+  &.is-open {
+    display: block;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin: auto;
+    width: 100%;
+  }
+  @media screen and (min-width: $tablet) {
+    @include centeredFlex();
+  }
+  @media screen and (min-width: $desktop) {
+    align-items: flex-start;
+  }
 }
 .main-nav {
-  position: relative;
-
   padding-top: 15px;
   margin-bottom: 60px;
-}
-.menu-container {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
 
-  text-align: center;
-  margin: auto;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  @media screen and (min-width: $tablet) {
+    margin: 0;
+    padding: 0;
+    margin-left: 80px;
+    margin-right: 84px;
+  }
 }
+.main-nav .list {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .list .header-address:first-child {
   margin-bottom: 15px;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0px;
+  }
 }
 .header-link {
   font-weight: 500;
@@ -47,6 +81,7 @@
   &:focus {
     color: $blue-color;
   }
+
   &.current {
     color: $blue-color;
   }
@@ -60,18 +95,42 @@
     height: 4px;
     border-radius: 2px;
   }
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 1.14;
+  }
 }
 .list .item:nth-child(n + 2) {
   margin-top: 40px;
   margin-bottom: 0px;
+
+  @media screen and (min-width: $tablet) {
+    margin: 0;
+    margin-left: 50px;
+  }
 }
 .list.header-address {
-  justify-content: center;
   text-align: center;
   margin: auto;
+  white-space: nowrap;
+
+  @media screen and (min-width: $tablet) {
+    text-align: start;
+  }
+  @media screen and (min-width: $desktop) {
+    @include centeredFlex();
+  }
 
   & li + li {
     margin-top: 15px;
+
+    @media screen and (min-width: $tablet) {
+      margin-top: 10px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-top: 0;
+      margin-left: 30px;
+    }
   }
 }
 .mail {
@@ -82,6 +141,7 @@
 }
 .header-icon {
   fill: $text-color;
+  margin-right: 8px;
 
   @include transition(fill);
 
@@ -95,8 +155,6 @@
 .menu-button {
   position: absolute;
   right: 22px;
-  top: 22px;
-  display: inline-flex;
   margin: 0;
   padding: 0;
   border: none;
@@ -109,6 +167,10 @@
     display: block;
   }
   &.is-open .icon-menu {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
     display: none;
   }
 }
