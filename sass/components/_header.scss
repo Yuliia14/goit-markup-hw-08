@@ -21,18 +21,16 @@
   }
 }
 .header {
-  @media screen and (min-width: $tablet) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
 
-    transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
-    @include centeredFlex(space-between);
-    justify-content: center;
-    margin: 0;
-  }
+  @include centeredFlex(space-between);
+  justify-content: center;
+  margin: 0;
 
   @media screen and (min-width: $tablet) {
     @include centeredFlex();
@@ -72,6 +70,7 @@
   @media screen and (min-width: $tablet) {
     @include centeredFlex();
     margin-left: 80px;
+    width: 100%;
   }
   @media screen and (min-width: $desktop) {
     margin-left: 85px;
@@ -89,7 +88,6 @@
   }
   @media screen and (min-width: $desktop) {
     margin-left: 0;
-    margin-right: 305px;
   }
 }
 .main-nav .list {

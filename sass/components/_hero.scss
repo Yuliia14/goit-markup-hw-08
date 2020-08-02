@@ -62,6 +62,9 @@
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 10;
 
+  padding: 93px 15px;
+  overflow-y: scroll;
+
   opacity: 1;
   transform: scale(1, 1);
 
@@ -75,21 +78,33 @@
   }
 }
 .modal {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%) scale(1, 1);
-  opacity: 1;
-
-  width: 528px;
-  height: 581px;
+  position: relative;
   padding: 40px;
 
   background-color: $white-color;
+  transform: scale(1, 1);
+  opacity: 1;
 
   @include transition(opacity);
   @include transition(transform);
+
+  @media screen and (min-width: $tablet) {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) scale(1, 1);
+
+    width: 100%;
+    max-width: 450px;
+    max-height: 609px;
+
+    @media screen and (min-width: $desktop) {
+      max-width: 528px;
+      max-height: 581px;
+    }
+  }
 
   .backdrop.is-hidden & {
     transform: translate(-50%, -50%) scale(0, 0);
@@ -125,22 +140,26 @@
 
   font-weight: bold;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
 
   color: $title-color;
 
   text-shadow: $text-shadow, $text-shadow;
+
+  @media screen and (min-width: $tablet) {
+    line-height: 1.15;
+  }
 }
 .form-field {
   position: relative;
   @include centeredFlex();
-  justify-content: center;
   width: 100%;
 
   &:nth-child(-n + 5) {
     margin-bottom: 28px;
   }
+
   &:nth-child(6) {
     margin-bottom: 20px;
   }
@@ -219,6 +238,7 @@
   }
 }
 .form-field .name {
+  margin: 0;
   @include form-icons(12px);
 }
 .form-field .tel {
@@ -228,10 +248,18 @@
   @include form-icons(15px);
 }
 .policy-text {
-  margin-left: 8px;
-  font-size: 14px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 12px;
   line-height: 1.71;
   text-shadow: $text-shadow;
+
+  @media screen and(min-width:$desktop) {
+    font-size: 14px;
+  }
 }
 .checkbox {
   position: absolute;
@@ -248,6 +276,7 @@
   left: 0%;
   top: 50%;
   transform: translateY(-50%);
+
   width: 15px;
   height: 15px;
   background-color: $white-color;
@@ -267,9 +296,13 @@
 .policy-ref {
   margin-top: 20px;
 
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.71;
   text-shadow: $text-shadow;
+
+  @media screen and(min-width:$desktop) {
+    font-size: 14px;
+  }
 }
 .submit-form {
   @include centeredFlex();

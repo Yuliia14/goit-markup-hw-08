@@ -9,4 +9,8 @@ body {
   @media screen and (min-width: $desktop) {
     padding-top: 80px;
   }
+
+  &.modal-open {
+    overflow: hidden;
+  }
 }
