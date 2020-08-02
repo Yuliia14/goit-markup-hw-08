@@ -1,3 +1,293 @@
 .section-hero {
-  display: none;
+  @include centeredFlex();
+  justify-content: center;
+  max-width: 1600px;
+  height: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.8),
+      rgba(47, 48, 58, 0.8)
+    ),
+    url("../images/header-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: $text-color;
+
+  @media screen and (min-width: $desktop) {
+    height: 600px;
+  }
+}
+.section-text {
+  text-align: center;
+  color: $white-color;
+  letter-spacing: 0.06em;
+}
+.hero-title {
+  margin-bottom: 30px;
+
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}
+.hero-button {
+  @include centeredFlex(inline-block);
+  border-radius: 4px;
+  padding: 10px 32px;
+
+  min-width: 200px;
+  background-color: $blue-color;
+  box-shadow: $box-shadow;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  color: inherit;
+  text-align: center;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 10;
+
+  opacity: 1;
+  transform: scale(1, 1);
+
+  @include transition(transform);
+  @include transition(opacity);
+
+  &.is-hidden {
+    opacity: 0;
+    transform: scale(1, 1);
+    pointer-events: none;
+  }
+}
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%) scale(1, 1);
+  opacity: 1;
+
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+
+  background-color: $white-color;
+
+  @include transition(opacity);
+  @include transition(transform);
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0, 0);
+  }
+}
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  @include centeredFlex();
+
+  width: 30px;
+  height: 30px;
+
+  background-color: $white-color;
+  @include bordered(1px, rgba(0, 0, 0, 0.1));
+  border-radius: 100px;
+
+  @include transition(fill);
+}
+.close-item {
+  margin: auto;
+  width: 17px;
+  height: 17px;
+
+  .close-button:focus & {
+    fill: $blue-color;
+  }
+}
+.form-title {
+  margin-bottom: 30px;
+
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+
+  color: $title-color;
+
+  text-shadow: $text-shadow, $text-shadow;
+}
+.form-field {
+  position: relative;
+  @include centeredFlex();
+  justify-content: center;
+  width: 100%;
+
+  &:nth-child(-n + 5) {
+    margin-bottom: 28px;
+  }
+  &:nth-child(6) {
+    margin-bottom: 20px;
+  }
+}
+.form-input {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 42px;
+  @include bordered(1px, rgba(33, 33, 33, 0.2));
+  border-radius: 4px;
+  outline: none;
+
+  @include transition(border);
+
+  &:focus {
+    border: 1px solid $blue-color;
+  }
+}
+.textarea {
+  resize: none;
+  padding-left: 16px;
+}
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+
+  transform: translateY(-50%);
+
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: $text-color;
+
+  @include transition(transform);
+
+  .form-input:focus + &,
+  .form-input:not(:placeholder-shown) + & {
+    color: $blue-color;
+    transform: translate(-26px, -40px);
+  }
+}
+.form-comment {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: $text-color;
+
+  @include transition(transform);
+
+  .form-input:focus + &,
+  .form-input:not(:placeholder-shown) + & {
+    color: $blue-color;
+    transform: translate(0px, -35px);
+  }
+}
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  fill: $text-color;
+
+  @include transition(fill);
+
+  .form-field:focus-within > & {
+    fill: $blue-color;
+  }
+}
+.form-field .name {
+  @include form-icons(12px);
+}
+.form-field .tel {
+  @include form-icons(13px, 13px);
+}
+.form-field .mail {
+  @include form-icons(15px);
+}
+.policy-text {
+  margin-left: 8px;
+  font-size: 14px;
+  line-height: 1.71;
+  text-shadow: $text-shadow;
+}
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.check-icon {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: $white-color;
+  @include bordered(2px, $text-color);
+
+  @include transition(background-color);
+  @include transition(border);
+
+  .checkbox:checked + & {
+    background-color: $blue-color;
+    background-image: url(../images/icon-check.svg);
+    background-size: contain;
+    background-origin: border-box;
+    @include bordered(1px, $blue-color);
+  }
+}
+.policy-ref {
+  margin-top: 20px;
+
+  font-size: 14px;
+  line-height: 1.71;
+  text-shadow: $text-shadow;
+}
+.submit-form {
+  @include centeredFlex();
+  justify-content: center;
+  margin-top: 30px;
+}
+.submit-button {
+  border-radius: 4px;
+  padding: 10px 55px;
+
+  min-width: 200px;
+  background-color: $blue-color;
+  box-shadow: $box-shadow;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  color: $white-color;
+  text-align: center;
+  letter-spacing: 0.06em;
 }

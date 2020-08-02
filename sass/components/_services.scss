@@ -1,12 +1,12 @@
 .services {
   display: none;
-  @media screen and(min-width:1200px) {
+  @media screen and (min-width: $desktop) {
     display: block;
     margin-bottom: 94px;
   }
 }
 
-@media screen and(min-width:1200px) {
+@media screen and (min-width: $desktop) {
   .services-list {
     @include centeredFlex();
     justify-content: space-between;
@@ -15,7 +15,6 @@
     padding-left: 0;
   }
   .services-item {
-    position: relative;
     width: 370px;
     margin: 15px;
   }
@@ -27,6 +26,7 @@
     color: $title-color;
   }
   .services {
+    position: relative;
     text-align: center;
     font-weight: bold;
     font-size: 14px;

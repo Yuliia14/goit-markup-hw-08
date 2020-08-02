@@ -4,10 +4,9 @@ body {
   background-color: $white-color;
   color: $text-color;
 
-  padding-top: 60px;
   margin: 0;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $desktop) {
     padding-top: 80px;
   }
 }
