@@ -84,10 +84,10 @@
     margin: 0;
     margin-top: 28px;
     padding: 0;
-    margin-right: 84px;
+    margin-right: auto;
   }
   @media screen and (min-width: $desktop) {
-    margin-left: 0;
+    margin-left: auto;
   }
 }
 .main-nav .list {
