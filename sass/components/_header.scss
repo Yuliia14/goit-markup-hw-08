@@ -69,7 +69,8 @@
   }
   @media screen and (min-width: $tablet) {
     @include centeredFlex();
-    margin-left: 80px;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
   }
   @media screen and (min-width: $desktop) {
@@ -85,8 +86,6 @@
     margin-top: 28px;
     padding: 0;
     margin-right: auto;
-  }
-  @media screen and (min-width: $desktop) {
     margin-left: auto;
   }
 }
@@ -155,6 +154,7 @@
 
   @media screen and (min-width: $tablet) {
     text-align: start;
+    margin-left: auto;
   }
   @media screen and (min-width: $desktop) {
     @include centeredFlex();

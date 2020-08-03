@@ -309,19 +309,19 @@ body.modal-open {
 
 @media screen and (min-width: 480px) {
   .container {
-    width: 480px;
+    max-width: 480px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    max-width: 768px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
-    width: 1200px;
+    max-width: 1200px;
   }
 }
 
@@ -455,7 +455,8 @@ body.modal-open {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-left: 80px;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
   }
 }
@@ -477,11 +478,6 @@ body.modal-open {
     margin-top: 28px;
     padding: 0;
     margin-right: auto;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .main-nav {
     margin-left: auto;
   }
 }
@@ -565,6 +561,7 @@ body.modal-open {
 @media screen and (min-width: 768px) {
   .list.header-address {
     text-align: start;
+    margin-left: auto;
   }
 }
 
