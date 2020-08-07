@@ -826,6 +826,7 @@ body.modal-open {
 .modal {
   position: relative;
   padding: 40px;
+  max-width: 480px;
   background-color: #ffffff;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);

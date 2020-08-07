@@ -165,6 +165,7 @@
 .modal {
   position: relative;
   padding: 40px;
+  max-width: 480px;
 
   background-color: $white-color;
   transform: scale(1, 1);
